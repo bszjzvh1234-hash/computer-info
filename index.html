@@ -1,0 +1,317 @@
+<!doctype html>
+
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>เว็บให้ความรู้เกี่ยวกับคอมพิวเตอร์ — Uracha Thongthip</title>
+  <meta name="description" content="เว็บไซต์ให้ความรู้เกี่ยวกับคอมพิวเตอร์ พร้อมแบบทดสอบ 20 ข้อ" />
+  <style>
+    /* =========== Base =========== */
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#6ee7b7; --glass: rgba(255,255,255,0.04);
+      --radius:12px; --maxw:1100px;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; background:linear-gradient(180deg,#071024 0%, #071b2a 100%); color:#e6eef6; -webkit-font-smoothing:antialiased; padding:32px; display:flex; justify-content:center;
+      font-size:16px; line-height:1.45;
+    }
+    .wrap{width:100%; max-width:var(--maxw);}
+    .container{display:grid; grid-template-columns: 1fr 380px; gap:28px; align-items:start}/* =========== Header =========== */
+header{display:flex; justify-content:space-between; align-items:center; margin-bottom:18px}
+header .brand{display:flex; gap:14px; align-items:center}
+.logo{width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent),#60a5fa); display:flex; align-items:center; justify-content:center; font-weight:700; color:#042029}
+h1{font-size:20px;margin:0}
+.sub{color:var(--muted); font-size:13px}
+
+/* =========== Main card =========== */
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border-radius:var(--radius); padding:22px; box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+.hero{display:flex; gap:18px}
+.hero .left{flex:1}
+.hero .image{width:360px; min-width:200px; border-radius:12px; overflow:hidden}
+.image img{display:block; width:100%; height:100%; object-fit:cover}
+.tag{display:inline-block; padding:6px 10px; background:var(--glass); border-radius:999px; color:var(--accent); font-weight:600; font-size:13px}
+
+/* =========== Topics =========== */
+.topics{display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:16px}
+.topic{background:rgba(255,255,255,0.02); padding:12px; border-radius:10px; display:flex; gap:12px}
+.topic img{width:84px; height:64px; object-fit:cover; border-radius:8px}
+.topic h3{margin:0; font-size:15px}
+.topic p{margin:6px 0 0; color:var(--muted); font-size:13px}
+
+/* =========== Sidebar =========== */
+aside{position:sticky; top:36px}
+.toc{display:flex; flex-direction:column; gap:8px}
+.btn{display:inline-block; background:linear-gradient(90deg,#0ea5a4,#60a5fa); color:#042029; padding:10px 14px; border-radius:10px; font-weight:700; text-decoration:none; text-align:center}
+.small-card{background:rgba(255,255,255,0.02); padding:14px; border-radius:12px}
+.meta{color:var(--muted); font-size:13px}
+
+/* =========== Quiz =========== */
+.quiz-list{margin-top:10px}
+.q-card{background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent); padding:12px; border-radius:10px; margin-bottom:10px}
+.q-card h4{margin:0 0 8px}
+.options{display:flex; flex-direction:column; gap:8px}
+label.option{display:flex; align-items:center; gap:10px; background:rgba(255,255,255,0.02); padding:8px; border-radius:8px; cursor:pointer}
+label.option input{transform:scale(1.05)}
+
+/* =========== Footer / Author =========== */
+footer{margin-top:22px; display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:13px}
+.author{opacity:0.9; background:rgba(255,255,255,0.02); padding:8px 12px; border-radius:999px}
+
+/* =========== Responsive =========== */
+@media (max-width:980px){
+  .container{grid-template-columns:1fr;}
+  .hero{flex-direction:column}
+  .image{width:100%}
+  aside{position:static}
+  .topics{grid-template-columns:1fr}
+}
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">UC</div>
+        <div>
+          <h1>พื้นฐานคอมพิวเตอร์ สำหรับผู้เริ่มต้น — ครบ จบ ในไฟล์เดียว</h1>
+          <div class="sub">ภาพประกอบคุณภาพสูง · ข้อความอธิบายเชิงลึก · แบบทดสอบ 20 ข้อ</div>
+        </div>
+      </div>
+      <div class="author" title="ผู้จัดทำ">ผู้จัดทำ: นางสาวอุรชา ทองทิพย์ (Uracha Thongthip)</div>
+    </header><div class="container">
+  <main class="card">
+    <section class="hero">
+      <div class="left">
+        <span class="tag">คอมพิวเตอร์เบื้องต้น</span>
+        <h2 style="margin-top:12px">เข้าใจฮาร์ดแวร์ ซอฟต์แวร์ และเครือข่าย — โดยย่อแต่ละเอียด</h2>
+        <p style="color:var(--muted); margin-top:10px">บทความนี้สรุปหัวข้อสำคัญที่ทุกคนควรรู้เกี่ยวกับคอมพิวเตอร์ ถ้าคุณต้องการเริ่มเขียนโปรแกรม ทำงานด้าน IT หรือต้องการเข้าใจการทำงานของระบบ — เริ่มจากตรงนี้</p>
+
+        <div class="topics">
+
+<h2 style="margin:0 0 12px">หัวข้อที่ 1: ความรู้พื้นฐานเกี่ยวกับคอมพิวเตอร์</h2>
+<p style="color:var(--muted)">คอมพิวเตอร์คืออุปกรณ์อิเล็กทรอนิกส์ที่สามารถประมวลผล จัดเก็บ และสื่อสารข้อมูลได้อย่างรวดเร็ว ประกอบด้วยฮาร์ดแวร์ ซอฟต์แวร์ และเครือข่ายที่ทำงานร่วมกันเพื่อให้เกิดระบบที่สมบูรณ์</p>
+<img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=800" style="width:100%; border-radius:10px; margin:10px 0"/><h2 style="margin:16px 0 12px">หัวข้อที่ 2: ส่วนประกอบของคอมพิวเตอร์ (ฮาร์ดแวร์)</h2>
+<ul style="color:var(--muted)">
+<li><strong>CPU (Central Processing Unit)</strong> — สมองของระบบ ทำหน้าที่ประมวลผลคำสั่งทุกอย่าง</li>
+<li><strong>RAM</strong> — หน่วยความจำชั่วคราวสำหรับโปรแกรมที่กำลังทำงาน หากมีมาก ระบบจะทำงานลื่นขึ้น</li>
+<li><strong>Storage (SSD/HDD)</strong> — ที่เก็บข้อมูลถาวร SSD เร็วกว่า HDD อย่างมาก</li>
+<li><strong>Mainboard</strong> — กระดานวงจรที่เชื่อมทุกอุปกรณ์เข้าด้วยกัน</li>
+<li><strong>GPU</strong> — ประมวลผลกราฟิก เหมาะสำหรับงานเกม 3D ตัดต่อ และ AI</li>
+<li><strong>PSU</strong> — แหล่งจ่ายไฟให้ระบบ การเลือกคุณภาพสูงช่วยลดความเสี่ยงเสียหาย</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1585079545612-0f6b6b6c1b3c?q=80&w=800" style="width:100%; border-radius:10px; margin:10px 0"/><h2 style="margin:16px 0 12px">หัวข้อที่ 3: ซอฟต์แวร์และระบบปฏิบัติการ</h2>
+<p style="color:var(--muted)">ซอฟต์แวร์คือชุดคำสั่งที่บอกให้ฮาร์ดแวร์ทำงาน แบ่งเป็น 2 ประเภทใหญ่ ๆ:</p>
+<ul style="color:var(--muted)">
+<li><strong>ระบบปฏิบัติการ (OS)</strong>: เช่น Windows, macOS, Linux ทำหน้าที่จัดการฮาร์ดแวร์ จัดสรรทรัพยากร และให้ผู้ใช้ควบคุมระบบ</li>
+<li><strong>แอปพลิเคชัน</strong>: โปรแกรมที่ใช้ทำงาน เช่น Microsoft Office, Chrome, Photoshop</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1300" style="width:100%; border-radius:10px; margin:10px 0"/><h2 style="margin:16px 0 12px">หัวข้อที่ 4: อินเทอร์เน็ตและเครือข่ายคอมพิวเตอร์</h2>
+<p style="color:var(--muted)">อินเทอร์เน็ตคือเครือข่ายขนาดใหญ่เชื่อมโยงคอมพิวเตอร์ทั่วโลก โดยใช้อุปกรณ์ เช่น เราท์เตอร์ โมเด็ม และโปรโตคอล เช่น TCP/IP เพื่อสื่อสาร</p>
+<ul style="color:var(--muted)">
+<li><strong>IP Address</strong> — หมายเลขประจำอุปกรณ์</li>
+<li><strong>DNS</strong> — ระบบแปลงชื่อเว็บไซต์ให้เป็น IP</li>
+<li><strong>Router / Switch</strong> — ช่วยกระจายและจัดเส้นทางการเชื่อมต่อ</li>
+<li><strong>Firewall</strong> — ป้องกันการโจมตี ความปลอดภัยมีความสำคัญมาก</li>
+</ul>
+<img src="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1400" style="width:100%; border-radius:10px; margin:10px 0"/></div><section style="margin-top:18px"">
+              <h3>เครือข่ายและความปลอดภัย (ย่อ)</h3>
+              <p class="meta">การเชื่อมต่ออินเทอร์เน็ตทำผ่านโปรโตคอลหลายชั้น: IP, TCP/UDP, HTTP/HTTPS เป็นต้น — ส่วนความปลอดภัยมีทั้งการอัปเดตระบบ กำหนดรหัสผ่านที่แข็งแรง และใช้การเข้ารหัส เมื่อทำการติดต่อข้อมูลสำคัญ</p>
+            </section><section style="margin-top:14px">
+          <h3>คำแนะนำเพื่อประสิทธิภาพที่ดีขึ้น</h3>
+          <ul style="color:var(--muted)">
+            <li>ติดตั้งอัปเดตระบบและไดรเวอร์เสมอ</li>
+            <li>เลือกใช้ SSD สำหรับระบบปฏิบัติการ</li>
+            <li>สำรองข้อมูลสำคัญเป็นประจำ (backup)</li>
+            <li>ใช้โปรแกรมป้องกันมัลแวร์และตั้งค่าความปลอดภัย</li>
+          </ul>
+        </section>
+
+      </div>
+
+      <div class="image">
+        <img alt="Computer illustration" src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5">
+      </div>
+    </section>
+
+    <section style="margin-top:18px">
+      <h3>แบบทดสอบ (20 ข้อ) — ทดสอบความเข้าใจ</h3>
+      <div class="quiz-list" id="quiz"></div>
+
+      <div style="display:flex; gap:12px; margin-top:12px; align-items:center">
+        <button id="submitBtn" class="btn">ตรวจคำตอบ</button>
+        <button id="resetBtn" class="btn" style="background:linear-gradient(90deg,#f97316,#fb7185); color:white">รีเซ็ตคำตอบ</button>
+        <div id="result" style="margin-left:auto; color:var(--accent); font-weight:700"></div>
+      </div>
+
+      <div style="margin-top:12px; color:var(--muted); font-size:13px">หลังตรวจคำตอบ คุณจะเห็นคะแนนและเฉลยพร้อมคำอธิบายสั้น ๆ</div>
+    </section>
+
+    <footer>
+      <div class="meta">สำหรับการเรียนรู้ส่วนบุคคลและการสอน เบรคหัวข้อแล้วทำความเข้าใจทีละส่วน</div>
+      <div class="meta">เวอร์ชัน: 1.0</div>
+    </footer>
+  </main>
+
+  <aside>
+    <div class="small-card card">
+      <strong>สารบัญด่วน</strong>
+      <div class="toc" style="margin-top:8px">
+        <a href="#" onclick="scrollToSection(0);return false" class="meta">• หน่วยประมวลผล (CPU)</a>
+        <a href="#" onclick="scrollToSection(1);return false" class="meta">• หน่วยความจำ (RAM)</a>
+        <a href="#" onclick="scrollToSection(2);return false" class="meta">• พื้นที่เก็บข้อมูล</a>
+        <a href="#" onclick="scrollToSection(3);return false" class="meta">• ระบบปฏิบัติการ</a>
+        <a href="#" onclick="document.getElementById('quiz').scrollIntoView({behavior:'smooth'});return false" class="meta">• แบบทดสอบ 20 ข้อ</a>
+      </div>
+    </div>
+
+    <div style="height:12px"></div>
+
+    <div class="small-card">
+      <strong>เครื่องมือ</strong>
+      <div style="margin-top:8px; display:flex; flex-direction:column; gap:8px">
+        <a class="btn" href="#" id="downloadBtn">ดาวน์โหลดไฟล์ HTML</a>
+        <a class="btn" href="#" onclick="window.print();return false">พิมพ์</a>
+      </div>
+    </div>
+
+  </aside>
+
+</div>
+
+  </div>  <script>
+    // ===== Quiz data =====
+    const questions = [
+      {q:'CPU คืออะไร และหน้าที่หลักของมันคืออะไร?', type:'text', a:'CPU ย่อมาจาก Central Processing Unit ทำหน้าที่ประมวลผลคำสั่งของโปรแกรม', explain:'CPU เป็นสมองของคอมพิวเตอร์ ประมวลผลคำสั่งจากซอฟต์แวร์'},
+      {q:'หน่วยความจำชั่วคราวที่โปรแกรมใช้งานคืออะไร?', type:'mcq', opts:['HDD','RAM','GPU','ROM'], a:'RAM', explain:'RAM ใช้เก็บข้อมูลชั่วคราวสำหรับโปรแกรมที่กำลังรัน'},
+      {q:'SSD แตกต่างจาก HDD อย่างไร (ตอบสั้น)', type:'text', a:'SSD เร็วกว่า HDD เพราะไม่มีชิ้นส่วนเคลื่อนที่ และมี latency ต่ำกว่า', explain:'SSD ใช้หน่วยความจำแฟลช ข้อดีคือความเร็วสูงและความทนทาน'},
+      {q:'ระบบปฏิบัติการตัวใดต่อไปนี้เป็น "ลินุกซ์"', type:'mcq', opts:['Windows 10','macOS Ventura','Ubuntu','ChromeOS'], a:'Ubuntu', explain:'Ubuntu เป็นดิสโทรของ Linux'},
+      {q:'โปรโตคอลที่ใช้ในการรับ-ส่งหน้าเว็บผ่านการเข้ารหัสคืออะไร?', type:'mcq', opts:['HTTP','FTP','SMTP','HTTPS'], a:'HTTPS', explain:'HTTPS คือ HTTP ที่มีการเข้ารหัสผ่าน TLS/SSL'},
+      {q:'คำนิยามของ IP address คืออะไร?', type:'text', a:'ที่อยู่ตัวตนบนเครือข่ายที่ระบุอุปกรณ์ในระบบเครือข่าย', explain:'IP ใช้ระบุปลายทางและต้นทางของการสื่อสารทางเครือข่าย'},
+      {q:'ส่วนประกอบใดที่สำคัญที่สุดในการแสดงผลกราฟิก 3 มิติ', type:'mcq', opts:['PSU','GPU','SSD','NIC'], a:'GPU', explain:'GPU ถูกออกแบบมาสำหรับการประมวลผลกราฟิก'},
+      {q:'การสำรองข้อมูล (backup) ควรทำอย่างไร?', type:'text', a:'สำรองข้อมูลหลายสำเนาในสถานที่ต่างกันและทดสอบการคืนค่า', explain:'กฎ 3-2-1: อย่างน้อย 3 สำเนา, 2 สื่อ, 1 ออฟไซต์'},
+      {q:'ไฟล์ประเภทใดที่เหมาะสำหรับเก็บรูปภาพความละเอียดสูงโดยไม่สูญเสียข้อมูล (lossless)?', type:'mcq', opts:['JPEG','PNG','GIF','SVG'], a:'PNG', explain:'PNG สนับสนุนการบีบอัดแบบ lossless'},
+      {q:'อะไรคือ BIOS/UEFI?', type:'text', a:'เฟิร์มแวร์ที่เริ่มต้นและเตรียมฮาร์ดแวร์ก่อนโหลดระบบปฏิบัติการ', explain:'UEFI เป็นรุ่นใหม่ของ BIOS ที่มีฟีเจอร์และ UI ทันสมัยกว่า'},
+      {q:'คำสั่งพื้นฐานสำหรับสร้างไดเรกทอรีในระบบ Unix/Linux คืออะไร?', type:'mcq', opts:['ls','mkdir','rm','touch'], a:'mkdir', explain:'mkdir ย่อมาจาก make directory'},
+      {q:'ความแตกต่างระหว่าง HTTP กับ HTTPS สั้นๆ', type:'text', a:'HTTPS เข้ารหัสข้อมูลด้วย TLS/SSL ขณะที่ HTTP ไม่เข้ารหัส', explain:'HTTPS ป้องกันการดักฟังและการแก้ไขข้อมูลระหว่างทาง'},
+      {q:'คำว่า Latency มักอธิบายอะไรในคอมพิวเตอร์?', type:'mcq', opts:['ขนาดฮาร์ดดิสก์','ความหน่วยความจำ','ความหน่วงเวลาในการตอบสนอง','ความเร็วสัญญาณนาฬิกา'], a:'ความหน่วงเวลาในการตอบสนอง', explain:'Latency คือเวลาที่ใช้ในการตอบสนองของระบบหรืออุปกรณ์'},
+      {q:'คำสั่งพื้นฐานเพื่อดูไฟล์ภายในไดเรกทอรีบน Windows คืออะไร?', type:'mcq', opts:['dir','ls','cat','pwd'], a:'dir', explain:'dir แสดงรายชื่อไฟล์และไดเรกทอรีบน Windows Command Prompt'},
+      {q:'อะไรคือ Virtual Machine (VM)?', type:'text', a:'ซอฟต์แวร์ที่จำลองฮาร์ดแวร์ทำให้สามารถรันระบบปฏิบัติการหลายตัวบนเครื่องเดียว', explain:'VM ช่วยแยกสภาพแวดล้อมและทดสอบระบบต่างๆ โดยไม่กระทบระบบหลัก'},
+      {q:'โปรโตคอลที่ใช้ส่งอีเมลหลักๆ คืออะไร (เลือกทุกข้อที่ถูก)', type:'checkbox', opts:['SMTP','IMAP','FTP','POP3'], a:['SMTP','IMAP','POP3'], explain:'SMTP ใช้ส่ง ขณะที่ IMAP/POP3 ใช้อ่านเมล'},
+      {q:'คำสั่ง git ที่ใช้เริ่มต้น repo ใหม่คืออะไร?', type:'mcq', opts:['git init','git start','git create','git new'], a:'git init', explain:'git init สร้าง repository ใหม่'},
+      {q:'เทคโนโลยีที่ใช้สำหรับเก็บข้อมูลแบบกระจาย (decentralized) ตัวอย่างหนึ่งคืออะไร?', type:'mcq', opts:['Cloud Storage','Blockchain','HDD RAID','NAS'], a:'Blockchain', explain:'Blockchain เป็นแอปพลิเคชันหนึ่งที่เก็บข้อมูลแบบกระจาย'},
+      {q:'อธิบายสั้นๆ: Firewall ทำหน้าที่อะไร?', type:'text', a:'ควบคุมทราฟฟิกเครือข่ายเพื่อป้องกันการเข้าถึงที่ไม่ได้รับอนุญาต', explain:'Firewall ช่วยป้องกันการโจมตีจากภายนอกและจำกัดการเข้าถึง'},
+      {q:'การเข้ารหัสแบบ Public-key ใช้อะไรในการเข้ารหัสและถอดรหัส?', type:'mcq', opts:['กุญแจเดียวกัน','กุญแจสาธารณะและกุญแจส่วนตัว','รหัสผ่านเพียงอย่างเดียว','ไม่มีการใช้กุญแจ'], a:'กุญแจสาธารณะและกุญแจส่วนตัว', explain:'Public-key crypto ใช้คู่กุญแจสาธารณะ/ส่วนตัว'}
+    ];
+
+    // ===== Render quiz =====
+    function renderQuiz(){
+      const el = document.getElementById('quiz'); el.innerHTML='';
+      questions.forEach((item, idx)=>{
+        const qid = 'q'+idx;
+        const card = document.createElement('div'); card.className='q-card';
+        const h = document.createElement('h4'); h.textContent = (idx+1)+'. '+item.q; card.appendChild(h);
+        const opts = document.createElement('div'); opts.className='options';
+
+        if(item.type==='mcq'){
+          item.opts.forEach(o=>{
+            const id = qid+'-'+o;
+            const label = document.createElement('label'); label.className='option';
+            label.innerHTML = `<input type='radio' name='${qid}' value='${escapeHtml(o)}'> <span>${escapeHtml(o)}</span>`;
+            opts.appendChild(label);
+          });
+        } else if(item.type==='checkbox'){
+          item.opts.forEach(o=>{
+            const id = qid+'-'+o;
+            const label = document.createElement('label'); label.className='option';
+            label.innerHTML = `<input type='checkbox' name='${qid}' value='${escapeHtml(o)}'> <span>${escapeHtml(o)}</span>`;
+            opts.appendChild(label);
+          });
+        } else if(item.type==='text'){
+          const input = document.createElement('input'); input.type='text'; input.name=qid; input.placeholder='พิมพ์คำตอบสั้น ๆ ที่นี่...'; input.style.padding='8px'; input.style.borderRadius='8px'; input.style.width='100%'; input.style.border='none'; input.style.background='rgba(255,255,255,0.02)';
+          opts.appendChild(input);
+        }
+
+        card.appendChild(opts);
+        // explanation placeholder
+        const explain = document.createElement('div'); explain.id = qid+'-explain'; explain.style.marginTop='8px'; card.appendChild(explain);
+        el.appendChild(card);
+      });
+    }
+
+    function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+    // ===== Grading logic =====
+    function grade(){
+      let score = 0; let total = questions.length; const results = [];
+      questions.forEach((item, idx)=>{
+        const qid = 'q'+idx;
+        const type = item.type;
+        let correct = false; let userAns = null;
+        if(type==='mcq'){
+          const sel = document.querySelector(`input[name='${qid}']:checked`);
+          userAns = sel ? sel.value : '';
+          if(userAns && userAns.trim().toLowerCase()===String(item.a).trim().toLowerCase()) correct=true;
+        } else if(type==='checkbox'){
+          const sels = Array.from(document.querySelectorAll(`input[name='${qid}']:checked`)).map(n=>n.value);
+          userAns = sels.slice();
+          // compare sets
+          const need = (item.a||[]).slice().map(x=>String(x).toLowerCase()).sort();
+          const got = sels.map(x=>String(x).toLowerCase()).sort();
+          correct = JSON.stringify(need)===JSON.stringify(got);
+        } else if(type==='text'){
+          const val = (document.querySelector(`input[name='${qid}']`)||{value:''}).value;
+          userAns = val;
+          // loose matching: check if expected token words appear
+          const expect = String(item.a).toLowerCase();
+          correct = expect.split(' ').slice(0,6).every(tok=> tok.length>2 ? val.toLowerCase().includes(tok) : true);
+        }
+        if(correct) score++;
+        results.push({idx,correct,userAns,explain:item.explain,answer:item.a});
+      });
+      return {score,total,results};
+    }
+
+    document.getElementById('submitBtn').addEventListener('click', ()=>{
+      const r = grade();
+      document.getElementById('result').textContent = `คะแนน: ${r.score} / ${r.total}`;
+      // show explanations
+      r.results.forEach(res=>{
+        const exEl = document.getElementById('q'+res.idx+'-explain');
+        exEl.innerHTML = `<div style='color:${res.correct?"#8ef7b3":"#ffb4a2"}; font-weight:700'>${res.correct?"ถูก": "ผิด"}</div>
+                          <div style='color:var(--muted); margin-top:6px'>เฉลย: ${escapeHtml(String(res.answer))}</div>
+                          <div style='color:var(--muted); font-size:13px; margin-top:6px'>${escapeHtml(res.explain)}</div>`;
+      });
+      window.scrollTo({top:document.getElementById('quiz').offsetTop-20, behavior:'smooth'});
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', ()=>{
+      document.querySelectorAll('#quiz input').forEach(i=>i.checked=false);
+      document.querySelectorAll('#quiz input[type="text"]').forEach(i=>i.value='');
+      document.getElementById('result').textContent='';
+      document.querySelectorAll('[id$="-explain"]').forEach(d=>d.innerHTML='');
+    });
+
+    // ===== Download feature =====
+    document.getElementById('downloadBtn').addEventListener('click', (e)=>{
+      e.preventDefault();
+      const doc = `<!doctype html>\n${document.documentElement.outerHTML}`;
+      const blob = new Blob([doc], {type:'text/html'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href=url; a.download='computer-basics-uracha.html'; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+    });
+
+    function scrollToSection(i){
+      // quick map of sections
+      const sec = document.querySelectorAll('.topic');
+      if(sec[i]) sec[i].scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // render on load
+    renderQuiz();
+  </script></body>
+</html>
